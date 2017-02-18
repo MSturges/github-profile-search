@@ -1,0 +1,12 @@
+@import '../../sass/utils/variables';
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: 'Titillium Web', sans-serif;
+}

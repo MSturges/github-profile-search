@@ -1,0 +1,26 @@
+@import '../../sass/utils/variables';
+
+#search-container {
+  background-color: $lightgrey;
+  padding-top: 70px;
+  padding-bottom: 0px;
+
+  .userNameInput {
+    height: 50px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .userNamebtn {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+  }
+
+  .user-error {
+    height: 70px;
+    font-size: 20px;
+    padding: 7px;
+    color: $error;
+  }
+
+}

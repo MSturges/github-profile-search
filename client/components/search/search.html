@@ -1,0 +1,28 @@
+<section id="search-container">
+
+  <div class="container text-center">
+    <form ng-submit='vm.submitUserSearch()'>
+      <div class="col-lg-6 col-lg-offset-3">
+        <div class="input-group">
+          <input type='text' class='form-control userNameInput' name="userName" placeholder='Lookup GitHub Username' ng-model='vm.userName' required/>
+          <span class="input-group-btn">
+            <button class="btn btn-default userNamebtn" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="container user-error text-center">
+    <div ng-if='!vm.userError'>
+    </div>
+
+    <div ng-if='vm.userError'>
+      <p>Opps! Please enter a valid username (Example Msturges).</p>
+    </div>
+  </div>
+
+
+</section>

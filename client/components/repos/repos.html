@@ -1,0 +1,27 @@
+<div ng-hide="vm.hideRepos" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">User Repositories</h3>
+  </div>
+  <div class="panel-body">
+    <div ng-repeat="repo in vm.userRepos.data">
+      <div class="row">
+
+        <div class="col-md-9">
+          <p class="repo-title"><strong>Repository: </strong>{{repo.name}}</p>
+          <p class="repo-desc"><strong>Description: </strong>{{repo.description}}</p>
+        </div>
+
+        <div class="col-md-3">
+
+          <span class="label label-default">{{repo.watchers}} Watchers</span>
+          <span class="label label-primary">{{repo.forks}} Forks</span>
+          <br>
+          <a ng-click='vm.getRepoCommits(repo.full_name)' class="btn btn-primary view-comment-btn">View Commits</a>
+
+        </div>
+
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
