@@ -10,6 +10,7 @@
       <div class="row panel-body" ng-class-odd="'odd'" ng-class-even="'even'">
         <div class="col-md-12">
           <p class="repo-id"><strong>Commit:</strong> {{commit.sha}}</p>
+          <p class="repo-message"><strong>User:</strong> {{commit.author.login}}</p>
           <p class="repo-message"><strong>Commit Message:</strong> {{commit.commit.message}}</p>
         </div>
       </div>
