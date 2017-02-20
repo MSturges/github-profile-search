@@ -1,33 +1,38 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-  </div>
-  <div class="panel-body">
-    <div class="row">
+<section id="profile-continer">
+  <div class="panel panel-default">
+    <!-- <div class="panel-custom">
+    </div> -->
+    <div class="panel-custom">
+      <h3 class="panel-title">{{vm.user.login}} Profile</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
 
-      <div class="col-md-3 text-center">
-        <img class="img-thumbnail profile-pic" src="{{vm.userProfile.avatar_url}}">
-        <a class="btn btn-primary btn-block viewProfileBtn" target="_blank" href="{{vm.userProfile.html_url}}">View Profile</a>
-      </div>
-
-      <div class="col-md-9">
-        <div class="stats">
-          <span class="label label-default">{{vm.userProfile.public_repos}} Public Repos</span>
-          <span class="label label-primary">{{vm.userProfile.public_gists}} Public Gists</span>
-          <span class="label label-success">{{vm.userProfile.followers}} Followers</span>
-          <span class="label label-info">{{vm.userProfile.following}} Following</span>
+        <div class="col-md-3 text-center">
+          <img class="img-thumbnail profile-pic" src="{{vm.user.avatar_url}}">
+          <a class="btn btn-success btn-block viewProfileBtn" target="_blank" href="{{vm.user.html_url}}">View Profile</a>
         </div>
-        <br>
-        <ul class="list-group">
-          <li class="list-group-item"><strong>Username:</strong> {{vm.userProfile.login}}</li>
-          <li class="list-group-item"><strong>Location:</strong> {{vm.userProfile.location}}</li>
-          <li class="list-group-item"><strong>Email:</strong> {{vm.userProfile.email}}</li>
-          <li class="list-group-item"><strong>Blog:</strong> {{vm.userProfile.blog}}</li>
-          <li class="list-group-item"><strong>Member Since:</strong> {{vm.userProfile.created_at}}</li>
-        </ul>
-      </div>
 
+        <div class="col-md-9">
+          <div class="stats">
+            <span class="label label-default">{{vm.user.public_repos}} Public Repos</span>
+            <span class="label label-primary">{{vm.user.public_gists}} Public Gists</span>
+            <span class="label label-success">{{vm.user.followers}} Followers</span>
+            <span class="label label-info">{{vm.user.following}} Following</span>
+          </div>
+          <br>
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Username:</strong> {{vm.user.login}}</li>
+            <li class="list-group-item"><strong>Location:</strong> {{vm.user.location}}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{vm.user.email}}</li>
+            <li class="list-group-item"><strong>Blog:</strong> {{vm.user.blog}}</li>
+            <li class="list-group-item"><strong>Member Since:</strong> {{vm.user.created_at}}</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <repos-directive></repos-directive>

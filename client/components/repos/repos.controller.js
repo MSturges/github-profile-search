@@ -1,25 +1,19 @@
 class ReposController {
-  /**@ngInject*/
-  constructor($stateParams, getReposService, getRepoService, $state) {
+  constructor($scope, $stateParams, $state, getReposService, getCommitsService) {
 
+    this.$scope = $scope;
     this.$stateParams = $stateParams;
-    this.getReposService = getReposService;
-    this.getRepoService = getRepoService;
     this.$state = $state;
+    this.getReposService = getReposService;
+    this.getCommitsService = getCommitsService;
+    this.userRepos;
+    this.getReposService.updateRepos(this.$stateParams.profileID);
 
-    this.userRepos = this.getReposService.userRepos;
-
-    this.hideRepos = this.getRepoService.hideRepos;
-
-    if (this.userRepos == false) {
-      this.getReposService.getRepos(this.$stateParams.profileID)
-      .then((res) => {
-        this.userRepos = this.getReposService.userRepos;
-      })
-      .catch((err) => {
-        this.$state.go('layout');
-      });
-    }
+    this.$scope.$watch(() => {
+      return this.getReposService.getRepos();
+    }, (newValue) => {
+      this.userRepos  = newValue;
+    }, true);
 
     if (this.$state.current.name == 'layout.profile' ) {
       this.hideRepos = false;
@@ -27,9 +21,9 @@ class ReposController {
 
   }
 
-  getRepoCommits(fullName) {
+  updateCommits(fullName) {
 
-    this.getRepoService.getRepoCommits(fullName)
+    this.getCommitsService.updateCommits(fullName)
     .then((res) => {
       this.hideRepos = true;
       this.$state.go('layout.repository', {profileID : this.$stateParams.profileID, repoID : fullName } );

@@ -1,5 +1,4 @@
 class LayoutController {
-    /**@ngInject*/
     constructor() {}
 };
 

@@ -1,10 +1,6 @@
 @import '../../sass/utils/variables';
 
-#profile-continer{
-
-  .panel {
-    margin: 0;
-  }
+#chart-continer{
 
   .panel-custom {
     background-color: $lightgrey;
@@ -16,8 +12,4 @@
     }
   }
 
-  .viewProfileBtn {
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
 }

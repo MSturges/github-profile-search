@@ -1,26 +1,36 @@
 @import '../../sass/utils/variables';
 
 #search-container {
-  background-color: $lightgrey;
+  background-color: $white;
   padding-top: 70px;
   padding-bottom: 0px;
+  box-shadow: 0 8px 8px 0px rgba(0, 0, 0, .7);
 
   .userNameInput {
     height: 50px;
     font-size: 20px;
     line-height: 40px;
   }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
   .userNamebtn {
     height: 50px;
-    width: 50px;
+    width: 80px;
     padding: 0;
+    outline: none;
+    color: $green;
+    background-color: $lightgrey;
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+    &:hover {
+      background-color: $white;
+    }
   }
-
   .user-error {
     height: 70px;
     font-size: 20px;
     padding: 7px;
     color: $error;
   }
-
 }

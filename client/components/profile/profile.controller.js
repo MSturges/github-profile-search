@@ -1,25 +1,20 @@
 class ProfileController {
-  /**@ngInject*/
-  constructor($stateParams, getUserService, $state) {
-
-    this.$stateParams = $stateParams;
-    this.getUserService = getUserService;
+  constructor($scope, $state, $stateParams, getProfileService) {
+    this.$scope = $scope;
     this.$state = $state;
+    this.$stateParams = $stateParams;
+    this.getProfileService = getProfileService;
+    this.user;
 
-    this.userProfile = this.getUserService.userProfile;
+    this.getProfileService.updateProfile(this.$stateParams.profileID);
 
-    if (this.userProfile == false) {
-      this.getUserService.getUser(this.$stateParams.profileID)
-      .then((res) => {
-        this.userProfile = this.getUserService.userProfile;
-      })
-      .catch((err) => {
-        this.$state.go('layout');
-      });
-    }
+    this.$scope.$watch(() => {
+      return this.getProfileService.getProfile();
+    }, (newValue) => {
+      this.user = newValue;
+    }, true);
 
   }
-
 };
 
 export default ProfileController;

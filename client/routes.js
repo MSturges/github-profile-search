@@ -11,7 +11,7 @@ export default (['$stateProvider', '$urlRouterProvider', '$locationProvider',
             })
             .state('layout.repository', {
                 url: "profile/{profileID}/{repoID}",
-                template: '<repo-directive></repo-directive>'
+                template: '<commits-directive></commits-directive>'
             });
 
         $urlRouterProvider.otherwise('/');

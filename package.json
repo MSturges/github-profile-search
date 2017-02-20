@@ -1,5 +1,5 @@
 {
-  "name": "csgo-website",
+  "name": "github-profile-search",
   "version": "1.0.0",
   "description": "",
   "main": "./bin/www",
@@ -39,14 +39,17 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.15.2",
+    "chart.js": "^2.5.0",
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.1",
     "debug": "^2.6.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
+    "highcharts": "^5.0.7",
     "jsonwebtoken": "^7.2.1",
     "knex": "^0.12.6",
     "morgan": "^1.7.0",

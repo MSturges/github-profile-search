@@ -1,17 +1,16 @@
 class SearchController {
-  /**@ngInject*/
-  constructor(getUserService, getReposService, $state, $scope) {
-    this.getUserService = getUserService;
-    this.getReposService = getReposService;
+  constructor($state, $scope, getProfileService, getReposService) {
     this.$state = $state;
     this.$scope = $scope;
+    this.getProfileService = getProfileService;
+    this.getReposService = getReposService;
   }
 
   submitUserSearch() {
-    this.getUserService.getUser(this.userName)
+    this.getProfileService.updateProfile(this.userName)
     .then((res) => {
       if (res.status == 200) {
-        this.getReposService.getRepos(this.userName)
+        this.getReposService.updateRepos(this.userName)
         .then((res) => {
           this.$state.go('layout.profile', {profileID: this.userName});
           this.userError = false;

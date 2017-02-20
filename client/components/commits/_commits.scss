@@ -1,6 +1,6 @@
 @import '../../sass/utils/variables';
 
-#repos-container {
+#repo-container{
 
   .panel-custom {
     background-color: $lightgrey;
@@ -17,17 +17,14 @@
     p {
       word-wrap:break-word
     }
-    .repo-title {
-      font-size: 20px;
-    }
+  }
 
-    .repo-desc {
-      font-size: 15px;
-    }
+  .repo-id {
+    font-size: 20px;
+  }
 
-    .view-comment-btn {
-      margin-top: 15px;
-    }
+  .repo-message {
+    font-size: 15px;
   }
 
   .odd {

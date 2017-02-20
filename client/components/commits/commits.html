@@ -1,0 +1,19 @@
+<chart-directive></chart-directive>
+
+
+<section id="repo-container">
+  <div class="panel-custom">
+    <h3 class="panel-title">Commits</h3>
+  </div>
+  <div>
+    <div ng-repeat="commit in vm.commits">
+      <div class="row panel-body" ng-class-odd="'odd'" ng-class-even="'even'">
+        <div class="col-md-12">
+          <p class="repo-id"><strong>Commit:</strong> {{commit.sha}}</p>
+          <p class="repo-message"><strong>Commit Message:</strong> {{commit.commit.message}}</p>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</section>

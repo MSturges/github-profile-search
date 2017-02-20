@@ -1,8 +1,8 @@
-import controller from './repo.controller.js';
+import controller from './commits.controller.js';
 
 export default () => {
     return {
-        template: require('./repo.html'),
+        template: require('./commits.html'),
         controller,
         restrict: 'E',
         controllerAs: 'vm',
